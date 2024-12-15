@@ -1,9 +1,137 @@
 {
-  "posts": [
-    { "id": 1, "title": "json-server", "author": "typicode" }
+  "farms": [
+    {
+      "id": "1",
+      "farmName": "Paragominas Farm",
+      "landArea": 100,
+      "landUnit": "hectares",
+      "address": {
+        "latitude": -2.9964,
+        "longitude": -47.3532,
+        "fullAddress": "Fazenda Paragominas, Pará"
+      },
+      "cropProductions": [
+        {
+          "id": 1,
+          "cropTypeId": 1,
+          "isIrrigated": true,
+          "isInsured": false,
+          "area": 12
+        },
+        {
+          "id": 2,
+          "cropTypeId": 2,
+          "isIrrigated": true,
+          "isInsured": false,
+          "area": 21
+        }
+      ],
+      "totalLandArea": 13.354646810060501,
+      "totalLandUnit": "hectares",
+      "createdAt": "2024-12-15T04:58:04.960Z"
+    },
+    {
+      "id": "1f77",
+      "farmName": "Boa Vista Farm",
+      "landArea": 433,
+      "landUnit": "hectares",
+      "address": {
+        "latitude": -29.94,
+        "longitude": -51.115,
+        "fullAddress": "Fazenda Boa Vista, Rio Grande do Sul"
+      },
+      "cropProductions": [
+        {
+          "cropTypeId": 1,
+          "isIrrigated": true,
+          "isInsured": false,
+          "id": 1,
+          "area": 22
+        },
+        {
+          "cropTypeId": 2,
+          "isIrrigated": true,
+          "isInsured": false,
+          "id": 2,
+          "area": 33
+        },
+        {
+          "cropTypeId": 3,
+          "isIrrigated": false,
+          "isInsured": true,
+          "id": 3,
+          "area": 32
+        },
+        {
+          "cropTypeId": 1,
+          "isIrrigated": false,
+          "isInsured": true,
+          "id": 4,
+          "area": 32
+        }
+      ],
+      "createdAt": "2024-12-15T04:58:17.308Z",
+      "totalLandArea": 48.15766576961211,
+      "totalLandUnit": "hectares"
+    },
+    {
+      "id": "47d8",
+      "farmName": "Fazenda nao me deixes",
+      "landArea": 400,
+      "landUnit": "hectares",
+      "address": {
+        "latitude": -4.9751759,
+        "longitude": -38.6368754,
+        "fullAddress": "Ibicuitinga"
+      },
+      "cropProductions": [
+        {
+          "id": 1,
+          "cropTypeId": 4,
+          "isIrrigated": true,
+          "isInsured": false,
+          "area": 323
+        },
+        {
+          "id": 2,
+          "cropTypeId": 1,
+          "isIrrigated": false,
+          "isInsured": true,
+          "area": 32
+        },
+        {
+          "id": 3,
+          "cropTypeId": 3,
+          "isIrrigated": true,
+          "isInsured": true,
+          "area": 44
+        }
+      ],
+      "createdAt": "2024-12-15T05:03:27.135Z",
+      "totalLandArea": 161.4698205216406,
+      "totalLandUnit": "hectares"
+    }
   ],
-  "comments": [
-    { "id": 1, "body": "some comment", "postId": 1 }
-  ],
-  "profile": { "name": "typicode" }
+  "crop-types": [
+    {
+      "id": "1",
+      "name": "Rice"
+    },
+    {
+      "id": "2",
+      "name": "Beans"
+    },
+    {
+      "id": "3",
+      "name": "Corn"
+    },
+    {
+      "id": "4",
+      "name": "Coffee"
+    },
+    {
+      "id": "5",
+      "name": "Soybean"
+    }
+  ]
 }
