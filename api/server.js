@@ -1,33 +1,21 @@
-// See https://github.com/typicode/json-server#module
-const jsonServer = require("json-server");
+const jsonServer = require('json-server')
 
-const server = jsonServer.create();
+const server = jsonServer.create()
+const router = jsonServer.router('db.json')
+const middlewares = jsonServer.defaults()
 
-// Uncomment to allow write operations
-const fs = require("fs");
-const path = require("path");
-const filePath = path.join("db.json");
-const data = fs.readFileSync(filePath, "utf-8");
-const db = JSON.parse(data);
-const router = jsonServer.router(db);
+server.use(middlewares)
 
-// Comment out to allow write operations
-// const router = jsonServer.router('db.json')
+// Middleware para persistir dados no localStorage
+server.use((req, res, next) => {
+    if (req.method === 'POST' || req.method === 'PUT' || req.method === 'DELETE') {
+        const data = JSON.parse(req.body)
+        localStorage.setItem('db', JSON.stringify(data)) // Persistindo no localStorage
+    }
+    next()
+})
 
-const middlewares = jsonServer.defaults();
-
-server.use(middlewares);
-// Add this before server.use(router)
-server.use(
-  jsonServer.rewriter({
-    "/api/*": "/$1",
-    "/blog/:resource/:id/show": "/:resource/:id",
-  })
-);
-server.use(router);
+server.use(router)
 server.listen(3000, () => {
-  console.log("JSON Server is running");
-});
-
-// Export the Server API
-module.exports = server;
+    console.log('JSON Server is running')
+})
